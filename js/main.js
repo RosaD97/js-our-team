@@ -33,3 +33,12 @@ const info = [
          foto : 'barbara-ramos-graphic-designer.jpg'
       }
 ]
+
+for(let i = 0; i < info.length; i++){
+    console.log(info[i].nome)
+    console.log(info[i].ruolo)
+    console.log(info[i].foto)
+
+
+}
+// for(let key in info)
