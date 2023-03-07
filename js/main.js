@@ -1,5 +1,16 @@
 'use strict';
 
+// FUNZIONI
+
+// Crea un elemento nel dom
+function creaElement(element, classe, doveApp){
+    const elemento = document.createElement(element);
+    elemento.classList.add(classe);
+    doveApp.append(elemento);
+    
+    return elemento;
+    }
+
 // Tutte le informazioni dei membri del team
 const info = [
     {
@@ -34,11 +45,20 @@ const info = [
       }
 ]
 
-for(let i = 0; i < info.length; i++){
-    console.log(info[i].nome)
-    console.log(info[i].ruolo)
-    console.log(info[i].foto)
+const container = document.querySelector('.ms_div');
 
+// Stampa le info nel DOM
+for(let i = 0; i < info.length; i++){
+    const cards = creaElement('div', 'cards', container);
+
+    const foto = creaElement('span', 'foto', cards);
+    foto.innerHTML = info[i].foto;
+
+    const nome = creaElement('span', 'nome', cards);
+    nome.innerHTML = info[i].nome;
+
+    const ruolo = creaElement('span', 'ruolo', cards);
+    ruolo.innerHTML = info[i].ruolo;
 
 }
-// for(let key in info)
+
